@@ -15,6 +15,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         webView.loadRequest( NSURLRequest(URL: NSURL(string: "https://duckduckgo.com")!))
         webView.delegate = self
+        webView.dataDetectorTypes
     }
     
     @IBAction func backAction(sender: UIBarButtonItem) {
