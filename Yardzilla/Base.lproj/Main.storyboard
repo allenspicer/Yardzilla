@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -18,8 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUj-aW-ltC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UUj-aW-ltC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="gEy-aI-qTa"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Yardzilla" id="pss-t6-aJH">
                                         <leftBarButtonItems>
@@ -33,23 +37,36 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28S-t6-4AG">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28S-t6-4AG">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="556" id="ybd-hC-cVT"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ybd-hC-cVT"/>
+                                    </mask>
+                                </variation>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="28S-t6-4AG" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="3lI-ua-mU6"/>
+                            <constraint firstItem="28S-t6-4AG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="82s-L1-iPT"/>
                             <constraint firstItem="28S-t6-4AG" firstAttribute="leading" secondItem="UUj-aW-ltC" secondAttribute="leading" id="F9J-J4-f3f"/>
                             <constraint firstAttribute="trailing" secondItem="28S-t6-4AG" secondAttribute="trailing" id="enm-qC-vq5"/>
+                            <constraint firstItem="28S-t6-4AG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="glP-6m-eFv"/>
                             <constraint firstItem="28S-t6-4AG" firstAttribute="trailing" secondItem="UUj-aW-ltC" secondAttribute="trailing" id="qtD-AN-qVM"/>
                             <constraint firstItem="28S-t6-4AG" firstAttribute="top" secondItem="UUj-aW-ltC" secondAttribute="bottom" id="tM6-My-9jC"/>
                             <constraint firstItem="28S-t6-4AG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u0V-5n-j8E"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="82s-L1-iPT"/>
+                                <exclude reference="glP-6m-eFv"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
