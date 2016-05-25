@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
     @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadRequest( NSURLRequest(URL: NSURL(string: "https://duckduckgo.com")!))
+        webView.delegate = self
     }
     
     @IBAction func backAction(sender: UIBarButtonItem) {
@@ -39,7 +40,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
+
+    extension ViewController : UIWebViewDelegate{
+        func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool{
+            if ((request.mainDocumentURL?.absoluteString.containsString("http://")) != nil) {
+                return false
+            }
+            
+            return true
+        }
+        
+    }
+
+
+
 
