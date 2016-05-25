@@ -13,10 +13,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        webView.loadRequest( NSURLRequest(URL: NSURL(string: "https://duckduckgo.com")!))
     }
-    
-    
     
     @IBAction func backAction(sender: UIBarButtonItem) {
         if webView.canGoBack{
@@ -34,8 +32,6 @@ class ViewController: UIViewController {
     @IBAction func refreshAction(sender: UIBarButtonItem) {
         webView.reload()
     }
-
-    
     
     
 

@@ -92,8 +92,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="backAction" destination="JK9-wh-gJB" id="FkJ-AO-x5I"/>
-                        <outlet property="forwardAction" destination="V2S-Ny-ouH" id="ed8-rj-zk7"/>
                         <outlet property="webView" destination="28S-t6-4AG" id="f5J-KH-GbO"/>
                     </connections>
                 </viewController>
