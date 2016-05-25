@@ -28,12 +28,28 @@
                                 <items>
                                     <navigationItem title="Yardzilla" id="pss-t6-aJH">
                                         <leftBarButtonItems>
-                                            <barButtonItem title="Item" systemItem="rewind" id="JK9-wh-gJB"/>
-                                            <barButtonItem systemItem="fastForward" id="V2S-Ny-ouH"/>
+                                            <barButtonItem title="Item" systemItem="rewind" id="JK9-wh-gJB">
+                                                <connections>
+                                                    <action selector="backAction:" destination="BYZ-38-t0r" id="Ec3-UH-rJp"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="fastForward" id="V2S-Ny-ouH">
+                                                <connections>
+                                                    <action selector="forwardAction:" destination="BYZ-38-t0r" id="qy1-fS-AaN"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </leftBarButtonItems>
                                         <rightBarButtonItems>
-                                            <barButtonItem title="Item" systemItem="refresh" id="y3S-Yw-1eo"/>
-                                            <barButtonItem systemItem="stop" id="oQC-Jh-d25"/>
+                                            <barButtonItem title="Item" systemItem="refresh" id="y3S-Yw-1eo">
+                                                <connections>
+                                                    <action selector="refreshAction:" destination="BYZ-38-t0r" id="avh-8W-rTG"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="stop" id="oQC-Jh-d25">
+                                                <connections>
+                                                    <action selector="stopAction:" destination="BYZ-38-t0r" id="h5a-26-ho6"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -75,6 +91,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="backAction" destination="JK9-wh-gJB" id="FkJ-AO-x5I"/>
+                        <outlet property="forwardAction" destination="V2S-Ny-ouH" id="ed8-rj-zk7"/>
+                        <outlet property="webView" destination="28S-t6-4AG" id="f5J-KH-GbO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

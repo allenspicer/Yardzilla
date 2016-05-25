@@ -9,11 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
+    
+    @IBAction func backAction(sender: UIBarButtonItem) {
+        if webView.canGoBack{
+            webView.goBack()
+        }
+    }
+    @IBAction func forwardAction(sender: UIBarButtonItem) {
+        if webView.canGoForward{
+            webView.goForward()
+        }
+    }
+    @IBAction func stopAction(sender: UIBarButtonItem) {
+        webView.stopLoading()
+    }
+    @IBAction func refreshAction(sender: UIBarButtonItem) {
+        webView.reload()
+    }
+
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
